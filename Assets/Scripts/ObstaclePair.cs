@@ -6,30 +6,30 @@ public class ObstaclePair : MonoBehaviour
 {
     public Transform topObstacle;
     public Transform bottomObstacle;
-    public float gapSize = 5.5f;
+    public float gap = 3f;
+    public float moveSpeed = 2f;
 
-  /*  Don't need this anymore
-    void Awake()
-    {
-        topObstacle = transform.Find("TopObstacle");
-        bottomObstacle = transform.Find("BottomObstacle");
-    }
-    */
+    private float leftEdge;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        PositionObstacles();  
+        leftEdge = Camera.main.ScreenToWorldPoint(Vector3.zero).x - 1f;
+
+
+        topObstacle.localPosition = new Vector3(0, gap / 2f, 0);
+        bottomObstacle.localPosition = new Vector3(0, -gap / 2f, 0);
+
+        PolygonCollider2D topCollider = topObstacle.gameObject.AddComponent<PolygonCollider2D>();
+        PolygonCollider2D bottomCollider = bottomObstacle.gameObject.AddComponent<PolygonCollider2D>();
     }
 
-    void PositionObstacles()
+    private void Update()
     {
-        topObstacle.localPosition = new Vector3(0, gapSize / 2f, 0);
-        bottomObstacle.localPosition = new Vector3(0, -gapSize / 2f, 0);
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
+        transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+
+        if (transform.position.x < leftEdge)
+        {
+            Destroy(gameObject);
+        }
     }
 }

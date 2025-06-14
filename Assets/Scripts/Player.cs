@@ -24,4 +24,13 @@ public class Player : MonoBehaviour
     void Flap(){
         rigidbody.velocity = Vector2.up * force;
     }
+
+     void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.transform.CompareTag("Obstacle"))
+        {
+            Debug.Log("Game Over");
+
+        }
+    }
 }

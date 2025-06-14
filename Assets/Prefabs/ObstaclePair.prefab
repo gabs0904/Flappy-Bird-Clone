@@ -48,7 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topObstacle: {fileID: 7848506130438765931}
   bottomObstacle: {fileID: 4486723147364061756}
-  gapSize: 6
+  gap: 3
+  moveSpeed: 2
 --- !u!1 &4549759101666509813
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,8 +60,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7848506130438765931}
   - component: {fileID: 3650852984842187705}
-  - component: {fileID: 8005404110547270770}
   - component: {fileID: 2679371764274858443}
+  - component: {fileID: 3156973913322325314}
   m_Layer: 0
   m_Name: TopObstacle
   m_TagString: Untagged
@@ -76,8 +77,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4549759101666509813}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 0.5828, y: 8.9761, z: 0}
-  m_LocalScale: {x: 1.8356994, y: 1.760885, z: 1}
+  m_LocalPosition: {x: 0.52, y: 8.16, z: 0}
+  m_LocalScale: {x: 1.73, y: 1.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2120530277925137476}
@@ -135,32 +136,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8005404110547270770
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4549759101666509813}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2, y: 3.2}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!50 &2679371764274858443
 Rigidbody2D:
   serializedVersion: 4
@@ -182,6 +157,52 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!60 &3156973913322325314
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4549759101666509813}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.2, y: 3.2}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.82, y: 0.44}
+      - {x: 0.82, y: 1.05}
+      - {x: 0.74, y: 1.11}
+      - {x: 0.62, y: 1.22}
+      - {x: 0.29999998, y: 1.22}
+      - {x: 0.17999999, y: 1.13}
+      - {x: 0, y: 1.22}
+      - {x: -0.63, y: 1.22}
+      - {x: -0.72999996, y: 1.15}
+      - {x: -0.83, y: 1.01}
+      - {x: -0.91999996, y: 0.5}
+      - {x: -0.91999996, y: -0.12}
+      - {x: -0.74, y: -0.32999998}
+      - {x: -0.5, y: -0.42}
+      - {x: -0.44, y: -0.51}
+      - {x: -0.32999998, y: -0.53999996}
+      - {x: -0.32, y: -1.5999999}
+      - {x: 0.12, y: -1.5999999}
+      - {x: 0.12, y: -0.52}
+      - {x: 0.22, y: -0.56}
+      - {x: 0.71999997, y: -0.01}
 --- !u!1 &6819799616887001236
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,8 +213,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4486723147364061756}
   - component: {fileID: 3794449934225395629}
-  - component: {fileID: 6993854693616664166}
   - component: {fileID: 2278878542872901771}
+  - component: {fileID: 9180769063811550795}
   m_Layer: 0
   m_Name: BottomObstacle
   m_TagString: Untagged
@@ -209,8 +230,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6819799616887001236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.4113, y: -2.1827, z: 0}
-  m_LocalScale: {x: 2.0218349, y: 3.7045107, z: 1}
+  m_LocalPosition: {x: 0.3592, y: 0.1994, z: 0}
+  m_LocalScale: {x: 1.73, y: 1.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2120530277925137476}
@@ -257,43 +278,17 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f0e661507c64c4044965f21d2d44bd00, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6993854693616664166
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6819799616887001236}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!50 &2278878542872901771
 Rigidbody2D:
   serializedVersion: 4
@@ -315,3 +310,49 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!60 &9180769063811550795
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6819799616887001236}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.2, y: 3.2}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.82, y: 0.44}
+      - {x: 0.82, y: 1.05}
+      - {x: 0.74, y: 1.11}
+      - {x: 0.62, y: 1.22}
+      - {x: 0.29999998, y: 1.22}
+      - {x: 0.17999999, y: 1.13}
+      - {x: 0, y: 1.22}
+      - {x: -0.63, y: 1.22}
+      - {x: -0.72999996, y: 1.15}
+      - {x: -0.83, y: 1.01}
+      - {x: -0.91999996, y: 0.5}
+      - {x: -0.91999996, y: -0.12}
+      - {x: -0.74, y: -0.32999998}
+      - {x: -0.5, y: -0.42}
+      - {x: -0.44, y: -0.51}
+      - {x: -0.32999998, y: -0.53999996}
+      - {x: -0.32, y: -1.5999999}
+      - {x: 0.12, y: -1.5999999}
+      - {x: 0.12, y: -0.52}
+      - {x: 0.22, y: -0.56}
+      - {x: 0.71999997, y: -0.01}
