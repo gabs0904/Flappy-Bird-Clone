@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D rigidbody;
     private float force=5f;
+    public GameObject gameOverUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +31,8 @@ public class Player : MonoBehaviour
         if (col.transform.CompareTag("Obstacle"))
         {
             Debug.Log("Game Over");
-
+            Time.timeScale = 0f;
+            gameOverUI.SetActive(true);
         }
     }
 }
